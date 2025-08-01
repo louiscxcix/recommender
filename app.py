@@ -46,7 +46,7 @@ def get_gemini_recommendation(user_data, db):
         st.error("Gemini API 키를 설정하는 중 오류가 발생했습니다. Streamlit Cloud의 'Secrets'에 API 키가 올바르게 설정되었는지 확인해주세요.")
         return None
 
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
     prompt = f"""
     당신은 선수의 고민과 상황을 분석하여 최적의 스포츠 심리 상담사를 추천하는 AI 전문가입니다.
