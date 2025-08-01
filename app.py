@@ -174,5 +174,3 @@ if counselor_db:
 
 else:
     st.warning("상담사 데이터가 비어있습니다. `app.py` 파일의 `counselor_db` 리스트를 확인해주세요.")
-
-�
