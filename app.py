@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # --- 상담사 데이터베이스 (파이썬 리스트) ---
-# 상담사 정보를 수정, 추가, 삭제하려면 이 부분을 직접 편집하세요.
+# booking_link에 각 상담사의 실제 예약 페이지 URL을 입력하세요.
 counselor_db = [
   {
     "counselor_name": "김병준",
@@ -22,9 +22,8 @@ counselor_db = [
     "qualification_level": "교수급/1급",
     "certifications": ["스포츠심리상담사 1급", "인하대학교  석사", "스포츠심리학 박사"],
     "counseling_locations": ["인천", "서울", "비대면(온라인)", "비대면(전화)"],
-    "introduction": "'스포츠 심리학의 대가' 인하대학교 김병준 교수, 20년 이상의 상담 경력 및 유명 스포츠 팀, 선수, 메달리스트 대상 포트폴리오 보유"
-        "booking_link": "https://app.tufly.co.kr/counselors/%EA%B9%80%ED%98%95%EC%98%A5?resource=0a166abf-9185-4246-b328-836d8fa6001c" # 홍길동 상담사 예약 링크
-
+    "introduction": "'스포츠 심리학의 대가' 인하대학교 김병준 교수, 20년 이상의 상담 경력 및 유명 스포츠 팀, 선수, 메달리스트 대상 포트폴리오 보유",
+    "booking_link": "https://app.tufly.co.kr/counselors/%EA%B9%80%ED%98%95%EC%98%A5?resource=0a166abf-9185-4246-b328-836d8fa6001c"
   },
   {
     "counselor_name": "최유정",
@@ -35,9 +34,8 @@ counselor_db = [
     "qualification_level": "석사급/3급",
     "certifications": ["스포츠심리상담사 3급", "스포츠심리학 석사"],
     "counseling_locations": ["인천", "비대면(온라인)"],
-    "introduction": "프로 선수 및 유소년 선수들의 심리 기술 훈련을 통해 꾸준한 경기력을 유지하고 목표를 달성할 수 있도록 지원합니다."
-        "booking_link": "https://app.tufly.co.kr/counselors/full-name-06?resource=8dc8e72e-74c4-4f7b-bb39-186197bd553f" # 이순신 상담사 예약 링크
-
+    "introduction": "프로 선수 및 유소년 선수들의 심리 기술 훈련을 통해 꾸준한 경기력을 유지하고 목표를 달성할 수 있도록 지원합니다.",
+    "booking_link": "https://app.tufly.co.kr/counselors/full-name-06?resource=8dc8e72e-74c4-4f7b-bb39-186197bd553f"
   }
 ]
 
