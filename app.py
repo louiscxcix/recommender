@@ -51,7 +51,7 @@ counselor_db = [
   },
   {
     "counselor_name": "송재경",
-    "gender": "여성",
+    "gender": "남성",
     "experience_years": 5,
     "specialized_sports": ["수영", "국가대표 일반"],
     "specialized_areas": ["선수 경험 기반 상담", "심리적 고충 이해", "멘탈 퍼포먼스 향상", "집중력 향상"],
@@ -60,6 +60,30 @@ counselor_db = [
     "counseling_locations": ["인천", "서울", "비대면(온라인)"],
     "introduction": "대한민국 국가대표 수영선수 출신이라는 특별한 이력을 바탕으로, 선수들의 심리적 고충을 실질적으로 이해하고 소통할 수 있는 강점을 지닌 전문가입니다. 현재는 박사과정 중에도 다양한 강의와 프로그램을 진행하며 스포츠심리 현장에 적극적으로 참여하고 있습니다.",
     "booking_link": "https://app.tufly.co.kr/counselors/full-name-02?resource=0a166abf-9185-4246-b328-836d8fa6001c"
+  },
+  {
+    "counselor_name": "이유나",
+    "gender": "여성",
+    "experience_years": 8,
+    "specialized_sports": ["휠체어컬링", "레슬링", "태권도", "국가대표 일반"],
+    "specialized_areas": ["멘탈코칭", "경기력 향상", "진로 상담", "인성 및 윤리적 성장"],
+    "qualification_level": "박사과정/3급",
+    "certifications": ["스포츠심리상담사 3급"],
+    "counseling_locations": ["인천", "서울", "비대면(온라인)"],
+    "introduction": "국가대표 휠체어컬링 대표팀 멘탈코치로 활동하며, 스포츠 현장의 선수들과 깊이 호흡하고 있는 실전형 전문가입니다. 동시에 스포츠심리학 박사과정 연구자로서, 학문적 기반 위에 체계적이고 전문적인 상담 기법을 개발·실천해온 경험을 가지고 있습니다.",
+    "booking_link": "https://example.com/booking/lee_yuna" # 이유나 상담사 예약 링크 (임시)
+  },
+  {
+    "counselor_name": "천성민",
+    "gender": "남성",
+    "experience_years": 10,
+    "specialized_sports": ["컬링", "축구", "배구", "국가대표 일반"],
+    "specialized_areas": ["심리기술훈련", "멘탈트레이닝", "감정 조절", "경기력 향상"],
+    "qualification_level": "교수급/2급",
+    "certifications": ["스포츠심리상담사 2급"],
+    "counseling_locations": ["강원특별자치도", "서울", "비대면(온라인)"],
+    "introduction": "가톨릭관동대학교 교수로 재직 중인 실전형 전문가입니다. 강릉시청 컬링팀(팀킴) 등 다수의 프로팀 심리지원 경험을 바탕으로 선수들에게 체계적인 심리기술훈련을 제공합니다.",
+    "booking_link": "https://example.com/booking/cheon" # 천성민 상담사 예약 링크 (임시)
   }
 ]
 
