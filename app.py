@@ -23,7 +23,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 1급", "인하대학교  석사", "스포츠심리학 박사"],
     "counseling_locations": ["인천", "서울", "비대면(온라인)", "비대면(전화)"],
     "introduction": "'스포츠 심리학의 대가' 인하대학교 김병준 교수, 20년 이상의 상담 경력 및 유명 스포츠 팀, 선수, 메달리스트 대상 포트폴리오 보유",
-    "booking_link": "https://app.tufly.co.kr/counselors/%EA%B9%80%ED%98%95%EC%98%A5?resource=0a166abf-9185-4246-b328-836d8fa6001c"
+    "booking_link": "https://app.tufly.co.kr/counselors/%EA%B9%80%EB%B3%91%EC%A4%80?resource=0a166abf-9185-4246-b328-836d8fa6001c"
   },
   {
     "counselor_name": "최유정",
@@ -35,7 +35,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 3급", "스포츠심리학 석사"],
     "counseling_locations": ["인천", "비대면(온라인)"],
     "introduction": "프로 선수 및 유소년 선수들의 심리 기술 훈련을 통해 꾸준한 경기력을 유지하고 목표를 달성할 수 있도록 지원합니다.",
-    "booking_link": "https://app.tufly.co.kr/counselors/full-name-06?resource=8dc8e72e-74c4-4f7b-bb39-186197bd553f"
+    "booking_link": "https://app.tufly.co.kr/counselors/%EC%B5%9C%EC%9C%A0%EC%A0%95?resource=8dc8e72e-74c4-4f7b-bb39-186197bd553f"
   },
   {
     "counselor_name": "우영임",
@@ -47,7 +47,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 2급", "중등 정교사 2급 (체육)", "스포츠윤리지도사", "우수논문상 수상 (한국스포츠심리학회)"],
     "counseling_locations": ["인천", "경기도", "비대면(온라인)"],
     "introduction": "오랜 기간 동안 현장 중심의 스포츠심리상담 경험과 학문적 연구 성과를 모두 쌓아온 전문가입니다. 스포츠 현장의 실질적인 문제 해결부터, 프로그램 개발과 평가까지 폭넓게 다뤄온 이력을 갖추고 있습니다.",
-    "booking_link": "https://app.tufly.co.kr/counselors/full-name-04?resource=c5b8ad96-7b32-440e-a308-2274f9b87d0f"
+    "booking_link": "https://app.tufly.co.kr/counselors/%EC%9A%B0%EC%98%81%EC%9E%84?resource=c5b8ad96-7b32-440e-a308-2274f9b87d0f"
   },
   {
     "counselor_name": "송재경",
@@ -59,7 +59,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 2급"],
     "counseling_locations": ["인천", "서울", "비대면(온라인)"],
     "introduction": "대한민국 국가대표 수영선수 출신이라는 특별한 이력을 바탕으로, 선수들의 심리적 고충을 실질적으로 이해하고 소통할 수 있는 강점을 지닌 전문가입니다. 현재는 박사과정 중에도 다양한 강의와 프로그램을 진행하며 스포츠심리 현장에 적극적으로 참여하고 있습니다.",
-    "booking_link": "https://app.tufly.co.kr/counselors/full-name-02?resource=0a166abf-9185-4246-b328-836d8fa6001c"
+    "booking_link": "https://app.tufly.co.kr/counselors/%EC%86%A1%EC%9E%AC%EA%B2%BD?resource=0a166abf-9185-4246-b328-836d8fa6001c"
   },
   {
     "counselor_name": "이유나",
@@ -71,7 +71,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 3급"],
     "counseling_locations": ["인천", "서울", "비대면(온라인)"],
     "introduction": "국가대표 휠체어컬링 대표팀 멘탈코치로 활동하며, 스포츠 현장의 선수들과 깊이 호흡하고 있는 실전형 전문가입니다. 동시에 스포츠심리학 박사과정 연구자로서, 학문적 기반 위에 체계적이고 전문적인 상담 기법을 개발·실천해온 경험을 가지고 있습니다.",
-    "booking_link": "https://example.com/booking/lee_yuna" # 이유나 상담사 예약 링크 (임시)
+    "booking_link": "https://app.tufly.co.kr/counselors/%EC%9D%B4%EC%9C%A0%EB%82%98?resource=0a166abf-9185-4246-b328-836d8fa6001c"
   },
   {
     "counselor_name": "천성민",
@@ -83,7 +83,7 @@ counselor_db = [
     "certifications": ["스포츠심리상담사 2급"],
     "counseling_locations": ["강원특별자치도", "서울", "비대면(온라인)"],
     "introduction": "가톨릭관동대학교 교수로 재직 중인 실전형 전문가입니다. 강릉시청 컬링팀(팀킴) 등 다수의 프로팀 심리지원 경험을 바탕으로 선수들에게 체계적인 심리기술훈련을 제공합니다.",
-    "booking_link": "https://example.com/booking/cheon" # 천성민 상담사 예약 링크 (임시)
+    "booking_link": "https://app.tufly.co.kr/counselors/%EC%B2%9C%EC%84%B1%EB%AF%BC?resource=8dc8e72e-74c4-4f7b-bb39-186197bd553f"
   }
 ]
 
@@ -156,7 +156,7 @@ def get_gemini_recommendation(user_data, db):
         return None
 
 # --- Streamlit UI 구성 ---
-st.title("🥇 선수를 위한 맞춤 상담사 추천 AI")
+st.title("� 선수를 위한 맞춤 상담사 추천 AI")
 st.write("당신의 마음을 가장 잘 이해하는 전문가를 찾아드릴게요.")
 
 if counselor_db:
