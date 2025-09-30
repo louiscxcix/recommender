@@ -10,6 +10,39 @@ st.set_page_config(
     page_title="선수 맞춤 상담사 추천 AI", page_icon="🥇", layout="centered"
 )
 
+# --- UI 스타일링 ---
+st.markdown(
+    """
+    <style>
+        /* Primary Button Styling - Figma Design */
+        .stButton > button,
+        div[data-testid="stForm"] button[type="submit"],
+        div[data-testid="stFormSubmitButton"] button {
+            width: 100%;
+            padding: 14px 36px !important;
+            background: linear-gradient(135deg, rgba(98, 120.20, 246, 0.20) 0%, rgba(29, 48, 78, 0) 100%), #2BA7D1 !important;
+            box-shadow: 0px 5px 10px rgba(26, 26, 26, 0.10) !important;
+            border-radius: 12px !important;
+            color: white !important;
+            font-size: 14px !important;
+            font-family: Helvetica, sans-serif !important;
+            font-weight: 400 !important;
+            border: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .stButton > button:hover,
+        div[data-testid="stForm"] button[type="submit"]:hover,
+        div[data-testid="stFormSubmitButton"] button:hover {
+            background: linear-gradient(135deg, rgba(98, 120.20, 246, 0.30) 0%, rgba(29, 48, 78, 0) 100%), #1A8BB0 !important;
+            box-shadow: 0px 6px 14px rgba(26, 26, 26, 0.15) !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # --- 상담사 데이터베이스 (파이썬 리스트) ---
 # booking_link에 각 상담사의 실제 예약 페이지 URL을 입력하세요.
 counselor_db = [
@@ -205,7 +238,7 @@ def get_gemini_recommendation(user_data, db):
         st.error("Gemini API 키를 설정하는 중 오류가 발생했습니다.")
         return None
 
-    model = genai.GenerativeModel("gemini-1.5-flash-latest")
+    model = genai.GenerativeModel("gemini-2.0-flash-latest")
 
     prompt = f"""
     당신은 선수의 고민을 분석하여 최적의 스포츠 심리 상담사를 추천하는 AI 전문가입니다.
