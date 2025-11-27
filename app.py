@@ -44,7 +44,6 @@ st.markdown(
 )
 
 # --- 상담사 데이터베이스 (파이썬 리스트) ---
-# booking_link에 각 상담사의 실제 예약 페이지 URL을 입력하세요.
 counselor_db = [
     {
         "counselor_name": "김병준",
@@ -164,62 +163,17 @@ counselor_db = [
 
 # --- 선택지 목록 정의 ---
 SPORTS_LIST = [
-    "축구",
-    "야구",
-    "농구",
-    "배구",
-    "핸드볼",
-    "럭비",
-    "미식축구",
-    "아이스하키",
-    "골프",
-    "테니스",
-    "배드민턴",
-    "탁구",
-    "스쿼시",
-    "수영",
-    "다이빙",
-    "육상",
-    "체조",
-    "리듬체조",
-    "유도",
-    "태권도",
-    "가라테",
-    "레슬링",
-    "복싱",
-    "펜싱",
-    "양궁",
-    "사격",
-    "역도",
-    "사이클",
-    "승마",
-    "스키",
-    "스노보드",
-    "스케이트",
-    "컬링",
-    "e스포츠",
-    "기타",
+    "축구", "야구", "농구", "배구", "핸드볼", "럭비", "미식축구", "아이스하키",
+    "골프", "테니스", "배드민턴", "탁구", "스쿼시", "수영", "다이빙", "육상",
+    "체조", "리듬체조", "유도", "태권도", "가라테", "레슬링", "복싱", "펜싱",
+    "양궁", "사격", "역도", "사이클", "승마", "스키", "스노보드", "스케이트",
+    "컬링", "e스포츠", "기타",
 ]
 LOCATION_LIST = [
-    "서울특별시",
-    "부산광역시",
-    "대구광역시",
-    "인천광역시",
-    "광주광역시",
-    "대전광역시",
-    "울산광역시",
-    "세종특별자치시",
-    "경기도",
-    "강원특별자치도",
-    "충청북도",
-    "충청남도",
-    "전북특별자치도",
-    "전라남도",
-    "경상북도",
-    "경상남도",
-    "제주특별자치도",
-    "비대면(온라인)",
-    "비대면(전화)",
+    "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시",
+    "대전광역시", "울산광역시", "세종특별자치시", "경기도", "강원특별자치도",
+    "충청북도", "충청남도", "전북특별자치도", "전라남도", "경상북도",
+    "경상남도", "제주특별자치도", "비대면(온라인)", "비대면(전화)",
 ]
 all_areas = list(
     OrderedDict.fromkeys(
@@ -229,61 +183,62 @@ all_areas = list(
 AREAS_OF_CONCERN = all_areas
 
 
-# --- Gemini API 설정 및 추천 함수 ---
+# --- Gemini API 설정 및 추천 함수 (수정됨) ---
 def get_gemini_recommendation(user_data, db):
     """Gemini API를 호출하여 상담사 추천을 받는 함수"""
-    try:
-        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    except Exception:
-        st.error("Gemini API 키를 설정하는 중 오류가 발생했습니다.")
+    
+    # API 키 가져오기: Streamlit Secrets를 먼저 확인하고, 없으면 환경 변수 확인
+    api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
+    
+    if not api_key:
+        st.error("Gemini API 키가 설정되지 않았습니다. .streamlit/secrets.toml 파일 또는 환경 변수를 확인해주세요.")
         return None
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
-
-    prompt = f"""
-    당신은 선수의 고민을 분석하여 최적의 스포츠 심리 상담사를 추천하는 AI 전문가입니다.
-
-    ### 상담사 데이터베이스 (JSON):
-    {json.dumps(db, indent=2, ensure_ascii=False)}
-
-    ### 상담을 요청한 선수 정보:
-    - **소속 운동 종목:** {user_data["sport"]}
-    - **주요 고민 분야:** {", ".join(user_data["areas_of_concern"])}
-    - **선호 상담 지역/방식:** {", ".join(user_data["preferred_location"])}
-    - **선호 상담사 성별:** {user_data["preferred_gender"]}
-    - **선호 상담사 전문성 수준:** {user_data["preferred_experience_level"]}
-
-    ### 지시사항:
-    1. 선수의 '주요 고민 분야'를 깊이 분석하여 데이터베이스에서 **가장 적합한 상담사 한 명**을 선택하세요.
-    2. 아래의 JSON 형식에 맞춰 결과를 반환해주세요.
-       - "recommendation_text": Markdown 형식의 추천사 텍스트. 추천 이유와 기대효과를 포함해야 합니다.
-       - "booking_link": 추천된 상담사의 `booking_link` 값.
-
-    ```json
-    {{
-      "recommendation_text": "...",
-      "booking_link": "..."
-    }}
-    ```
-    """
     try:
-        response = model.generate_content(prompt)
-        # 응답 텍스트에서 JSON 부분만 추출하여 파싱
-        response_json_str = response.text.strip().lstrip("```json").rstrip("```")
-        response_json = json.loads(response_json_str)
-        return response_json
-    except (json.JSONDecodeError, AttributeError, ValueError) as e:
-        st.error(
-            f"AI 응답을 처리하는 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요. (오류: {e})"
+        genai.configure(api_key=api_key)
+        
+        # 모델 이름 수정 (gemini-1.5-flash 사용)
+        # response_mime_type을 사용하여 JSON 형식 강제
+        model = genai.GenerativeModel(
+            "gemini-1.5-flash",
+            generation_config={"response_mime_type": "application/json"}
         )
-        return None
+
+        prompt = f"""
+        당신은 선수의 고민을 분석하여 최적의 스포츠 심리 상담사를 추천하는 AI 전문가입니다.
+
+        ### 상담사 데이터베이스 (JSON):
+        {json.dumps(db, indent=2, ensure_ascii=False)}
+
+        ### 상담을 요청한 선수 정보:
+        - **소속 운동 종목:** {user_data["sport"]}
+        - **주요 고민 분야:** {", ".join(user_data["areas_of_concern"])}
+        - **선호 상담 지역/방식:** {", ".join(user_data["preferred_location"])}
+        - **선호 상담사 성별:** {user_data["preferred_gender"]}
+        - **선호 상담사 전문성 수준:** {user_data["preferred_experience_level"]}
+
+        ### 지시사항:
+        1. 선수의 '주요 고민 분야'를 깊이 분석하여 데이터베이스에서 **가장 적합한 상담사 한 명**을 선택하세요.
+        2. 반드시 아래의 JSON 스키마 형식으로만 응답하세요. (Markdown 코드 블록 없이 순수 JSON만 반환)
+
+        {{
+          "recommendation_text": "추천 이유와 기대효과를 포함한 Markdown 형식의 텍스트",
+          "booking_link": "선택된 상담사의 booking_link URL"
+        }}
+        """
+        
+        response = model.generate_content(prompt)
+        
+        # JSON 모드를 사용했으므로 바로 파싱 가능
+        return json.loads(response.text)
+
     except Exception as e:
-        st.error(f"추천을 생성하는 중 오류가 발생했습니다: {e}")
+        st.error(f"AI 응답을 처리하는 중 오류가 발생했습니다: {e}")
         return None
 
 
 # --- Streamlit UI 구성 ---
-st.title("� 선수를 위한 맞춤 상담사 추천 AI")
+st.title("🥇 선수를 위한 맞춤 상담사 추천 AI")
 st.write("당신의 마음을 가장 잘 이해하는 전문가를 찾아드릴게요.")
 
 if counselor_db:
