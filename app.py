@@ -238,7 +238,7 @@ def get_gemini_recommendation(user_data, db):
         st.error("Gemini API 키를 설정하는 중 오류가 발생했습니다.")
         return None
 
-    model = genai.GenerativeModel("gemini-2.0-flash-latest")
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
     prompt = f"""
     당신은 선수의 고민을 분석하여 최적의 스포츠 심리 상담사를 추천하는 AI 전문가입니다.
